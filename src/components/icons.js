@@ -116,6 +116,7 @@ export const Play = () => (
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    {/* <polygon points="5 3 19 12 5 21 5 3"></polygon> */}
+    <polygon points="6 3 20 12 6 21 6 3"></polygon>
   </svg>
 );

@@ -4,6 +4,7 @@ import FixedBackground from '../FixedBackground';
 import Frame from '../Frame';
 import Landing from '../Landing';
 import Projects from '../Projects';
+import About from '../About';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Frame />
       <Landing />
       <Projects />
+      <About />
     </>
   );
 }

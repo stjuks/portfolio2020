@@ -45,7 +45,6 @@ export const ProjectItemContainer = styled.div`
 
   .preview-image__wrapper {
     position: relative;
-    background: red;
     padding-top: 158%;
 
     .preview-image__container {
@@ -59,11 +58,13 @@ export const ProjectItemContainer = styled.div`
 
     .project-details {
       ${mixins.engulf}
+
       padding: 1rem;
       transition: all 0.2s;
       background: linear-gradient(
-        to bottom,
+        160deg,
         ${theme.colors.black.opacity(0.95)} 10%,
+        ${theme.colors.black.opacity(0.8)} 20%,
         transparent 50%
       );
       box-sizing: border-box;
@@ -78,6 +79,49 @@ export const ProjectItemContainer = styled.div`
         margin: 0.5rem 0;
       }
 
+      .text-link {
+        font-family: ${theme.fonts.serif};
+        font-style: italic;
+        position: relative;
+        color: ${theme.colors.orange};
+
+        :after,
+        :before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          left: 0;
+          right: 0;
+          height: 1px;
+          transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+        }
+
+        :after {
+          transform: scaleX(1);
+          transform-origin: right;
+          bottom: -0.125rem;
+          background: ${theme.colors.white.opacity(0.75)};
+        }
+
+        :before {
+          transform: scaleX(0);
+          transform-origin: left;
+          background: ${theme.colors.orange};
+          top: 50%;
+        }
+
+        :hover,
+        :focus {
+          :after {
+            transform: scaleX(0);
+          }
+
+          :before {
+            transform: scaleX(1);
+          }
+        }
+      }
+
       .duration {
         text-transform: uppercase;
         font-weight: 500;
@@ -85,9 +129,10 @@ export const ProjectItemContainer = styled.div`
       }
 
       .description {
-        line-height: 1.5rem;
+        line-height: 1.75rem;
         font-weight: 400;
-        padding-right: 2rem;
+        padding-right: 1rem;
+        margin-bottom: 1rem;
       }
 
       .actions {
@@ -101,7 +146,7 @@ export const ProjectItemContainer = styled.div`
           border-radius: 50%;
           color: ${theme.colors.orange};
           border: 1px solid ${theme.colors.white.opacity(0.1)};
-          transition: all .2s;
+          transition: all 0.2s;
 
           :hover {
             border-color: ${theme.colors.orange};

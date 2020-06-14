@@ -22,9 +22,6 @@ function Frame() {
             Work
           </a>
           <a href="" className="link">
-            About
-          </a>
-          <a href="" className="link">
             Contact
           </a>
           <button className="link">Resume</button>

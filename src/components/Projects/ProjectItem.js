@@ -10,11 +10,7 @@ function ProjectItem({ project }) {
       <ProjectItemContainer>
         <div className="preview-image__wrapper">
           <div className="preview-image__container">
-            <img
-              src={project.previewImage}
-              alt={project.name}
-              className="preview-image"
-            />
+            <img src={project.previewImage} alt={project.name} className="preview-image" />
           </div>
           <div className="project-details">
             <div className="name">{project.name}</div>
@@ -31,7 +27,9 @@ function ProjectItem({ project }) {
                 </div>
               </div>
               <div className="description">{project.description}</div>
-              <a href="">Read more</a>
+              <a href="" className="text-link">
+                Read more
+              </a>
             </div>
           </div>
         </div>
