@@ -65,6 +65,9 @@ export const LongArrowDown = () => (
     width="10.607"
     height="43.566"
     viewBox="0 0 10.607 43.566"
+    fill="currentColor"
+    stroke="currentColor"
+    strokeWidth="0"
   >
     <g id="arrow-down" transform="translate(-992.1 -960)">
       <line
@@ -72,8 +75,6 @@ export const LongArrowDown = () => (
         data-name="Line 58"
         y1="40"
         transform="translate(997.5 960)"
-        fill="currentColor"
-        stroke="#fcf7f8"
         stroke-width="1"
       />
       <path
@@ -81,7 +82,6 @@ export const LongArrowDown = () => (
         data-name="Path 21"
         d="M1.336-.85,6.967,6.127-2.164,5.15l3.634-2.2Z"
         transform="translate(999.349 994.469) rotate(60)"
-        fill="currentColor"
       />
     </g>
   </svg>

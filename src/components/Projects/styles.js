@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import mixins from '../../styles/mixins';
 import theme from '../../styles/theme';
 import media from '../../styles/media';
@@ -17,7 +17,7 @@ export const ProjectsContainer = styled.div`
 
     ${media.l`
       grid-gap: 5vw;
-      padding: 10rem 3rem;
+      padding: 10rem 4rem;
     `}
 
     ${media.m`
@@ -29,6 +29,18 @@ export const ProjectsContainer = styled.div`
     `}
   }
   
+`;
+
+const hoverStyles = css`
+  background-position-y: 0;
+
+  .name {
+    transform: translate(0, 0);
+  }
+
+  .hover-details {
+    opacity: 1;
+  }
 `;
 
 export const ProjectItemContainer = styled.div`
@@ -79,49 +91,6 @@ export const ProjectItemContainer = styled.div`
         margin: 0.5rem 0;
       }
 
-      .text-link {
-        font-family: ${theme.fonts.serif};
-        font-style: italic;
-        position: relative;
-        color: ${theme.colors.orange};
-
-        :after,
-        :before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          left: 0;
-          right: 0;
-          height: 1px;
-          transition: all 0.5s cubic-bezier(1, 0, 0, 1);
-        }
-
-        :after {
-          transform: scaleX(1);
-          transform-origin: right;
-          bottom: -0.125rem;
-          background: ${theme.colors.white.opacity(0.75)};
-        }
-
-        :before {
-          transform: scaleX(0);
-          transform-origin: left;
-          background: ${theme.colors.orange};
-          top: 50%;
-        }
-
-        :hover,
-        :focus {
-          :after {
-            transform: scaleX(0);
-          }
-
-          :before {
-            transform: scaleX(1);
-          }
-        }
-      }
-
       .duration {
         text-transform: uppercase;
         font-weight: 500;
@@ -148,7 +117,8 @@ export const ProjectItemContainer = styled.div`
           border: 1px solid ${theme.colors.white.opacity(0.1)};
           transition: all 0.2s;
 
-          :hover {
+          :hover,
+          :focus {
             border-color: ${theme.colors.orange};
           }
 
@@ -174,15 +144,14 @@ export const ProjectItemContainer = styled.div`
         transform: translate(-1rem, -2.5rem) scale(0.75);
       }
 
-      :hover {
-        background-position-y: 0;
+      :focus,
+      :focus-within {
+        ${hoverStyles}
+      }
 
-        .name {
-          transform: translate(0, 0);
-        }
-
-        .hover-details {
-          opacity: 1;
+      @media (hover: hover) {
+        :hover {
+          ${hoverStyles}
         }
       }
     }

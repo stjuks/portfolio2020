@@ -55,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: ${theme.fonts.sansSerif}, sans-serif;
   }
 
   a {
@@ -73,5 +73,13 @@ export const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     font-size: inherit;
     cursor: pointer;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
   }
 `;

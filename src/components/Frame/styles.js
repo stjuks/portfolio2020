@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 import media from '../../styles/media';
+import mixins from '../../styles/mixins';
 
 export const FrameContainer = styled.div`
-  position: fixed;
-  left: 1.5rem;
-  top: 1.5rem;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  ${mixins.engulfFixed}
+
   pointer-events: none;
   z-index: 9999;
 
@@ -18,10 +16,17 @@ export const FrameContainer = styled.div`
   }
 
   .navbar {
+    padding: 1.5rem;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
+    background: linear-gradient(to bottom, ${theme.colors.black.opacity(0.5)}, transparent);
     color: ${theme.colors.white};
     font-family: ${theme.fonts.serif};
+
+    ${media.s`
+      padding: 1rem;
+    `}
   }
 
   .logo {
@@ -54,6 +59,7 @@ export const FrameContainer = styled.div`
     color: ${theme.colors.orange};
     position: absolute;
     bottom: 0;
+    margin: 1.5rem;
 
     ${media.s`
       display: none;

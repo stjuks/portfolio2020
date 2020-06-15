@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import mixins from '../../styles/mixins';
 import theme from '../../styles/theme';
+import media from '../../styles/media';
 
 export const LandingContainer = styled.div`
   ${mixins.flexCenter}
@@ -11,16 +12,18 @@ export const LandingContainer = styled.div`
   .title-container {
     color: ${theme.colors.white.opacity(0.8)};
     text-align: right;
-    line-height: 10vw;
+    line-height: 0.8em;
     font-weight: 800;
     font-family: ${theme.fonts.sansSerif};
+    font-size: 20vw;
 
-    .top-line {
-      font-size: 13vw;
-    }
+    ${media.s`
+      margin-top: -7rem;
+      text-align: center;
+    `}
 
     .bottom-line {
-      font-size: 12vw;
+      font-size: 0.95em;
       position: relative;
       display: inline-block;
       color: ${theme.colors.black};
@@ -45,6 +48,13 @@ export const LandingContainer = styled.div`
 
         color: ${theme.colors.orange};
         font-family: ${theme.fonts.serif};
+
+        ${media.s`
+          transform: translateX(-50%);
+          left: 50%;
+          top: calc(100% + 3rem);
+          font-size: 1.5rem;
+        `}
       }
     }
   }
@@ -64,7 +74,7 @@ export const LandingContainer = styled.div`
       bottom: 35%;
       left: 50%;
       pointer-events: none;
-      color: ${theme.colors.white.opacity(0.5)};
+      color: ${theme.colors.white};
       position: absolute;
       transition: bottom 0.2s;
     }
