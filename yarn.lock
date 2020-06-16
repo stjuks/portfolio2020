@@ -1615,7 +1615,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
+"@types/react@*", "@types/react@^15.0.0 || ^16.0.0":
   version "16.9.36"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.36.tgz#ade589ff51e2a903e34ee4669e05dbfa0c1ce849"
   integrity sha512-mGgUb/Rk/vGx4NCvquRuSH0GHBQKb1OqpGS9cT9lFxlTLHZgkksgI60TuIxubmn7JuCb+sENHhQciqa0npm0AQ==
@@ -8512,7 +8512,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8722,6 +8722,14 @@ react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
+
+react-focus-within@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-focus-within/-/react-focus-within-2.0.2.tgz#2ce2922b36bb8ebb4167a9e1fd32d2293240225e"
+  integrity sha512-6lqUYJRtcqjEvJtGjypQgBpClqC0bh4g1G6zMCKUSBoENWwjUEfKeiHtIHln9kH937czzzrGPUYTgN4CrvpOow==
+  dependencies:
+    "@types/react" "^15.0.0 || ^16.0.0"
+    prop-types "^15.6.1"
 
 react-intersection-observer@^8.26.2:
   version "8.26.2"

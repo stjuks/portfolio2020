@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ProjectItemContainer } from './styles';
 import TextLink from '../../styles/TextLink';
+import { FocusWithin } from 'react-focus-within';
 
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Play } from '../icons';
 
 function DetailRow({ children, index }) {
@@ -44,50 +45,57 @@ function ProjectItem({ project }) {
   const [isHovering, setHovering] = useState(false);
 
   return (
-    <AnimateSharedLayout>
-      <ProjectItemContainer>
-        <motion.div
-          className="preview-image__wrapper"
-          onHoverStart={() => setHovering(true)}
-          onHoverEnd={() => setHovering(false)}
-          onFocus={() => setHovering(true)}
-          onBlur={() => setHovering(false)}
-          tabIndex={0}
-        >
-          <div className="preview-image__container">
-            <img
-              src={project.previewImage}
-              alt={project.name}
-              className="preview-image"
-            />
-          </div>
-          <motion.div
-            className="hover-overlay"
-            animate={{ opacity: isHovering ? 1 : 0 }}
-          />
-          <div
-            className="project-details"
-            style={{ pointerEvents: isHovering ? 'auto' : 'none' }}
-          >
+    <ProjectItemContainer>
+      <FocusWithin>
+        {({ focusProps, isFocused }) => {
+          const isOpened = isFocused || isHovering;
+
+          return (
             <motion.div
-              className="name"
-              initial={{ x: '-1rem', y: '-2.5rem', scale: 0.75 }}
-              animate={{
-                scale: isHovering ? 1 : 0.75,
-                x: isHovering ? 0 : '-1rem',
-                y: isHovering ? 0 : '-2.5rem'
-              }}
-              transition={{ duration: 0.2 }}
+              className="preview-image__wrapper"
+              onHoverStart={() => setHovering(true)}
+              onHoverEnd={() => setHovering(false)}
+              tabIndex={0}
+              {...focusProps}
             >
-              {project.name}
+              <div className="preview-image__container">
+                <img
+                  src={project.previewImage}
+                  alt={project.name}
+                  className="preview-image"
+                />
+              </div>
+              <motion.div
+                className="hover-overlay"
+                animate={{ opacity: isOpened ? 1 : 0 }}
+              />
+              <div
+                className="project-details"
+                style={{
+                  pointerEvents: isOpened ? 'auto' : 'none'
+                }}
+              >
+                <motion.div
+                  className="name"
+                  initial={{ x: '-1rem', y: '-2.5rem', scale: 0.75 }}
+                  animate={{
+                    scale: isOpened ? 1 : 0.75,
+                    x: isOpened ? 0 : '-1rem',
+                    y: isOpened ? 0 : '-2.5rem'
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {project.name}
+                </motion.div>
+                <AnimatePresence>
+                  {isOpened && <DetailRows project={project} />}
+                </AnimatePresence>
+              </div>
             </motion.div>
-            <AnimatePresence>
-              {isHovering && <DetailRows project={project} />}
-            </AnimatePresence>
-          </div>
-        </motion.div>
-      </ProjectItemContainer>
-    </AnimateSharedLayout>
+          );
+        }}
+      </FocusWithin>
+    </ProjectItemContainer>
   );
 }
 
