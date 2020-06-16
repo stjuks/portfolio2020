@@ -53,6 +53,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body,
   html {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     font-family: ${theme.fonts.sansSerif}, sans-serif;

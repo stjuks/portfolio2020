@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 import mixins from '../../styles/mixins';
+import media from '../../styles/media';
 
 export const AboutContainer = styled.div`
   ${mixins.flexCenter}
@@ -10,7 +11,11 @@ export const AboutContainer = styled.div`
     color: ${theme.colors.white};
     font-weight: 500;
     line-height: 2rem;
-    padding: 1rem;
+    padding: 0 4rem;
+
+    ${media.s`
+      padding: 0 1rem;
+    `}
 
     p {
       margin: 2rem 0;

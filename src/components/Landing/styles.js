@@ -17,7 +17,7 @@ export const LandingContainer = styled.div`
     font-family: ${theme.fonts.sansSerif};
     font-size: 20vw;
 
-    ${media.s`
+    ${media.m`
       margin-top: -7rem;
       text-align: center;
     `}
@@ -49,10 +49,10 @@ export const LandingContainer = styled.div`
         color: ${theme.colors.orange};
         font-family: ${theme.fonts.serif};
 
-        ${media.s`
+        ${media.m`
           transform: translateX(-50%);
           left: 50%;
-          top: calc(100% + 3rem);
+          top: calc(100% + 5vh);
           font-size: 1.5rem;
         `}
       }
@@ -62,6 +62,7 @@ export const LandingContainer = styled.div`
   .next-page-btn {
     position: absolute;
     bottom: 2.5rem;
+    left: 50%;
 
     height: 2rem;
     width: 2rem;

@@ -28,19 +28,6 @@ export const ProjectsContainer = styled.div`
       padding: 10rem 1rem;
     `}
   }
-  
-`;
-
-const hoverStyles = css`
-  background-position-y: 0;
-
-  .name {
-    transform: translate(0, 0);
-  }
-
-  .hover-details {
-    opacity: 1;
-  }
 `;
 
 export const ProjectItemContainer = styled.div`
@@ -145,13 +132,16 @@ export const ProjectItemContainer = styled.div`
       }
 
       :focus,
-      :focus-within {
-        ${hoverStyles}
-      }
+      :focus-within,
+      :hover {
+        background-position-y: 0;
 
-      @media (hover: hover) {
-        :hover {
-          ${hoverStyles}
+        .name {
+          transform: translate(0, 0);
+        }
+
+        .hover-details {
+          opacity: 1;
         }
       }
     }
