@@ -55,6 +55,12 @@ export const ProjectItemContainer = styled.div`
       }
     }
 
+    .hover-overlay {
+      ${mixins.engulf}
+      z-index: 0;
+      background: ${theme.colors.black.opacity(0.9)};
+    }
+
     .project-details {
       ${mixins.engulf}
 
@@ -71,6 +77,10 @@ export const ProjectItemContainer = styled.div`
       background-size: 100% 200%;
       background-position-y: 100%;
       font-family: ${theme.fonts.sansSerif};
+
+      .text-link {
+        margin-bottom: 0.25rem;
+      }
 
       .row {
         display: flex;
@@ -115,34 +125,13 @@ export const ProjectItemContainer = styled.div`
         }
       }
 
-      .hover-details {
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
-
       .name {
         font-weight: 700;
         margin-bottom: 0.25rem;
         text-transform: uppercase;
         pointer-events: none;
         font-size: 1.25rem;
-        transition: all 0.2s;
         transform-origin: left;
-        transform: translate(-1rem, -2.5rem) scale(0.75);
-      }
-
-      :focus,
-      :focus-within,
-      :hover {
-        background-position-y: 0;
-
-        .name {
-          transform: translate(0, 0);
-        }
-
-        .hover-details {
-          opacity: 1;
-        }
       }
     }
   }
