@@ -17,7 +17,7 @@ function About() {
         <p>
           I graduated from <strong>Tallinn University of Technology</strong>{' '}
           with a<strong> BSc in informatics</strong> and am now looking to work
-          on interesting projects. If you have an offer, feel free to{' '}
+          on interesting projects to develop my skills further. If you have an offer, feel free to{' '}
           <strong>get in touch</strong> via the links below.
         </p>
         <TextLink href="">Check out my resume</TextLink>

@@ -1,5 +1,7 @@
 import warehopv1Preview from '../assets/images/warehop-1-sample.jpg';
 import warehopv2Preview from '../assets/images/warehop-2-sample.jpg';
+import portfolioPreview from '../assets/images/portfolio-sample.jpg';
+import commdiaryPreview from '../assets/images/commdiary-sample.jpg';
 
 export const projects = [
   {
@@ -52,7 +54,7 @@ export const projects = [
     github: 'https://www.github.com/stjuks/warehop',
     live: 'https://www.stevenjuks.me/projects/warehopv1',
     tech: ['React', 'Styled Components', 'TypeScript', 'LocalStorage'],
-    previewImage: warehopv2Preview,
+    previewImage: commdiaryPreview,
     description:
       'A cash-basis accounting based inventory management application aimed towards Estonian sole proprietors.'
   },
@@ -62,7 +64,7 @@ export const projects = [
     github: 'https://www.github.com/stjuks/warehop',
     live: 'https://www.stevenjuks.me/projects/warehopv1',
     tech: ['React', 'Styled Components', 'Framer Motion'],
-    previewImage: warehopv1Preview,
+    previewImage: portfolioPreview,
     description:
       'A cash-basis accounting based inventory management application aimed towards Estonian sole proprietors.'
   }
