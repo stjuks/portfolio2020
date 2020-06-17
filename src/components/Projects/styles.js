@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import mixins from '../../styles/mixins';
 import theme from '../../styles/theme';
 import media from '../../styles/media';
@@ -92,6 +92,32 @@ export const ProjectItemContainer = styled.div`
         text-transform: uppercase;
         font-weight: 500;
         color: ${theme.colors.white.opacity(0.5)};
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.875rem;
+        margin: 0.5rem -0.625rem;
+
+        .tech-item {
+          color: ${theme.colors.white.opacity(0.65)};
+          position: relative;
+          z-index: 1;
+          margin: 0.25rem 0.625rem;
+
+          :before {
+            ${mixins.engulf}
+            content: '';
+            background: ${theme.colors.white.opacity(0.05)};
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            border-radius: 5rem;
+            padding: 0.125rem 0.5rem;
+          }
+        }
       }
 
       .description {

@@ -5,6 +5,7 @@ import { FocusWithin } from 'react-focus-within';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Play } from '../icons';
+import { useInView } from 'react-intersection-observer';
 
 function DetailRow({ children, index }) {
   return (
@@ -34,6 +35,11 @@ function DetailRows({ project }) {
         </a>
       </div>
     </div>,
+    <div className="tech-list">
+      {project.tech?.map((tech) => (
+        <div className="tech-item">{tech}</div>
+      ))}
+    </div>,
     <div className="description">{project.description}</div>,
     <TextLink href="">Read more</TextLink>
   ];
@@ -43,9 +49,12 @@ function DetailRows({ project }) {
 
 function ProjectItem({ project }) {
   const [isHovering, setHovering] = useState(false);
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  console.log(project.name, inView);
 
   return (
-    <ProjectItemContainer>
+    <ProjectItemContainer ref={ref}>
       <FocusWithin>
         {({ focusProps, isFocused }) => {
           const isOpened = isFocused || isHovering;
@@ -55,6 +64,12 @@ function ProjectItem({ project }) {
               className="preview-image__wrapper"
               onHoverStart={() => setHovering(true)}
               onHoverEnd={() => setHovering(false)}
+              animate={{
+                y: inView ? 0 : '20%',
+                opacity: inView ? 1 : 0,
+                scale: inView ? 1 : 0.9
+              }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               tabIndex={0}
               {...focusProps}
             >
