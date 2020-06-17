@@ -16,12 +16,13 @@ function Landing() {
         <>
           <motion.div
             className="title-container"
+            initial={{ rotate: -20, skew: -45 }}
             animate={{ rotate: scrollPos / 50, skew: scrollPos / 20 }}
           >
-            <motion.div className="top-line" animate={{ x: scrollPos }}>
+            <motion.div className="top-line" initial={{ x: '-100%' }} animate={{ x: scrollPos }}>
               STEVEN
             </motion.div>
-            <motion.div className="bottom-line" animate={{ x: -scrollPos }}>
+            <motion.div className="bottom-line" initial={{ x: '100%' }} animate={{ x: -scrollPos }}>
               JUKS<span className="point">.</span>
             </motion.div>
           </motion.div>
