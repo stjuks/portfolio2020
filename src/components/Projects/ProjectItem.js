@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ProjectItemContainer } from './styles';
 import TextLink from '../../styles/TextLink';
 import { FocusWithin } from 'react-focus-within';
@@ -51,13 +51,18 @@ function ProjectItem({ project }) {
   const [isHovering, setHovering] = useState(false);
   const [ref, inView] = useInView({ triggerOnce: true });
 
-  console.log(project.name, inView);
-
   return (
     <ProjectItemContainer ref={ref}>
       <FocusWithin>
         {({ focusProps, isFocused }) => {
           const isOpened = isFocused || isHovering;
+
+          const handleClick = (e) => {
+            if (isOpened) {
+              focusProps.onBlur(e);
+              setHovering(false);
+            }
+          };
 
           return (
             <motion.div
@@ -71,13 +76,18 @@ function ProjectItem({ project }) {
               }}
               transition={{ duration: 0.5, delay: 0.3 }}
               tabIndex={0}
+              onClick={handleClick}
               {...focusProps}
             >
               <div className="preview-image__container">
-                <img
+                <motion.img
                   src={project.previewImage}
                   alt={project.name}
                   className="preview-image"
+                  animate={{
+                    scale: isOpened ? 1.05 : 1,
+                    transition: { duration: 0.3 }
+                  }}
                 />
               </div>
               <motion.div

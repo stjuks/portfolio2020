@@ -48,6 +48,7 @@ export const ProjectItemContainer = styled.div`
 
     .preview-image__container {
       ${mixins.engulf}
+      overflow: hidden;
 
       .preview-image {
         width: 100%;
@@ -109,7 +110,7 @@ export const ProjectItemContainer = styled.div`
           :before {
             ${mixins.engulf}
             content: '';
-            background: ${theme.colors.white.opacity(0.05)};
+            background: ${theme.colors.white.opacity(0.025)};
             z-index: -1;
             transform: translate(-50%, -50%);
             left: 50%;
