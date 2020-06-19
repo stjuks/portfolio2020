@@ -92,7 +92,7 @@ export const ProjectItemContainer = styled.div`
       .duration {
         text-transform: uppercase;
         font-weight: 500;
-        color: ${theme.colors.white.opacity(0.5)};
+        color: ${theme.colors.orange};
       }
 
       .tech-list {
@@ -102,7 +102,7 @@ export const ProjectItemContainer = styled.div`
         margin: 0.5rem -0.625rem;
 
         .tech-item {
-          color: ${theme.colors.white.opacity(0.65)};
+          color: ${theme.colors.white.opacity(0.5)};
           position: relative;
           z-index: 1;
           margin: 0.25rem 0.625rem;
@@ -138,7 +138,7 @@ export const ProjectItemContainer = styled.div`
           width: 2rem;
           border-radius: 50%;
           color: ${theme.colors.orange};
-          border: 1px solid ${theme.colors.white.opacity(0.1)};
+          border: 1px solid ${theme.colors.white.opacity(0.05)};
           transition: all 0.2s;
 
           :hover,
@@ -154,7 +154,7 @@ export const ProjectItemContainer = styled.div`
 
       .name {
         font-weight: 700;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
         pointer-events: none;
         font-size: 1.25rem;

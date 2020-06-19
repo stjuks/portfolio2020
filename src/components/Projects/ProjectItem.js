@@ -24,7 +24,7 @@ function DetailRow({ children, index }) {
 
 function DetailRows({ project }) {
   const rows = [
-    <div className="row">
+    /*<div className="row">
       <div className="duration">{project.duration}</div>
       <div className="actions">
         <a href="">
@@ -34,14 +34,20 @@ function DetailRows({ project }) {
           <Play />
         </a>
       </div>
-    </div>,
+    </div>*/
+    <div className="duration">{project.duration}</div>,
     <div className="tech-list">
       {project.tech?.map((tech) => (
         <div className="tech-item">{tech}</div>
       ))}
     </div>,
     <div className="description">{project.description}</div>,
-    <TextLink href="">Read more</TextLink>
+    <div style={{ display: 'flex' }}>
+      <TextLink href="">View code</TextLink>
+      <TextLink href="" style={{ marginLeft: '0.75rem' }}>
+        View live
+      </TextLink>
+    </div>
   ];
 
   return rows.map((row, i) => <DetailRow index={i}>{row}</DetailRow>);
@@ -61,6 +67,8 @@ function ProjectItem({ project }) {
             if (isOpened) {
               focusProps.onBlur(e);
               setHovering(false);
+            } else {
+              focusProps.onFocus(e);
             }
           };
 
@@ -90,10 +98,7 @@ function ProjectItem({ project }) {
                   }}
                 />
               </div>
-              <motion.div
-                className="hover-overlay"
-                animate={{ opacity: isOpened ? 1 : 0 }}
-              />
+              <motion.div className="hover-overlay" animate={{ opacity: isOpened ? 1 : 0 }} />
               <div
                 className="project-details"
                 style={{
@@ -112,9 +117,7 @@ function ProjectItem({ project }) {
                 >
                   {project.name}
                 </motion.div>
-                <AnimatePresence>
-                  {isOpened && <DetailRows project={project} />}
-                </AnimatePresence>
+                <AnimatePresence>{isOpened && <DetailRows project={project} />}</AnimatePresence>
               </div>
             </motion.div>
           );

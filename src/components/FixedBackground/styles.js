@@ -1,12 +1,14 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import mixins from '../../styles/mixins';
 import theme from '../../styles/theme';
 
-export const FixedBackgroundContainer = styled.div`
+export const FixedBackgroundContainer = styled(motion.div)`
   ${mixins.engulfFixed}
 
   background: ${theme.colors.black};
   z-index: -1;
+  height: 200vh;
 
   .lines-container {
     display: flex;
@@ -17,7 +19,7 @@ export const FixedBackgroundContainer = styled.div`
     .bg-line {
       height: 1px;
       width: 100%;
-      background: ${theme.colors.white.opacity(0.025)};
+      background: ${theme.colors.white.opacity(0.1)};
       
       :first-child,
       :last-child {
