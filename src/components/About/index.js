@@ -1,6 +1,7 @@
 import React from 'react';
 import { AboutContainer } from './styles';
 import TextLink from '../../styles/TextLink';
+import { LongArrowRight } from '../icons';
 import EmailForm from '../EmailForm';
 
 function About() {
@@ -17,15 +18,12 @@ function About() {
         <p>
           I graduated from <strong>Tallinn University of Technology</strong>{' '}
           with a<strong> BSc in informatics</strong> and am now looking to work
-          on interesting projects to develop my skills further. If you have an offer, feel free to{' '}
-          <strong>get in touch</strong> via the links below.
+          on interesting projects to develop my skills further. If you have an
+          offer, feel free to <strong>get in touch</strong> via the links below.
         </p>
-        <TextLink href="">Check out my resume</TextLink>
         <div className="contact">
           <h3 className="med-title">CONTACT ME</h3>
-          <TextLink href="mailto:stevenjuks@hotmail.com">
-            E-mail
-          </TextLink>
+          <TextLink href="mailto:stevenjuks@hotmail.com">E-mail</TextLink>
           <TextLink
             href="https://www.linkedin.com/in/steven-juks-b7a511169/"
             target="_blank"
@@ -35,8 +33,16 @@ function About() {
           <TextLink href="https://www.github.com/stjuks" target="_blank">
             GitHub
           </TextLink>
-          <TextLink href="https://www.instagram.com/stevenjuks" target="_blank">Instagram</TextLink>
-          <TextLink href="https://www.facebook.com" target="_blank">FB Messenger</TextLink>
+          <TextLink href="https://www.instagram.com/stevenjuks" target="_blank">
+            Instagram
+          </TextLink>
+          <TextLink href="https://www.facebook.com" target="_blank">
+            FB Messenger
+          </TextLink>
+          <TextLink href="" className="resume-link">
+            <LongArrowRight />
+            Check out my resume
+          </TextLink>
         </div>
         <EmailForm />
       </div>

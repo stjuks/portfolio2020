@@ -3,12 +3,12 @@ import theme from '../../styles/theme';
 
 export const EmailFormContainer = styled.div`
   font-family: ${theme.fonts.sansSerif};
-  margin: 5rem 0;
+  margin: 4rem 0;
 
   .input-container {
     width: 100%;
     display: block;
-    margin-bottom: 2rem;
+    margin: 3rem 0;
   }
 
   .label {
@@ -20,6 +20,7 @@ export const EmailFormContainer = styled.div`
 
   input,
   textarea {
+    line-height: 1.5rem;
     box-sizing: border-box;
     font-size: 1rem;
     max-width: 100%;
@@ -29,7 +30,6 @@ export const EmailFormContainer = styled.div`
     font-family: ${theme.fonts.sansSerif};
     margin: 0;
     padding: 0;
-    padding-left: 0.5rem;
     border: none;
     background: transparent;
     border-radius: 0;

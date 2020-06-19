@@ -7,7 +7,7 @@ export const projects = [
   {
     name: 'Warehop 1.0',
     duration: "Jan - May '19",
-    github: 'https://www.github.com/stjuks/warehop',
+    github: 'https://github.com/stjuks/warehop-v1',
     live: 'https://www.stevenjuks.me/projects/warehopv1',
     tech: [
       'React',
@@ -28,8 +28,7 @@ export const projects = [
   {
     name: 'Warehop 2.0',
     duration: "Oct '19 - Now",
-    github: 'https://www.github.com/stjuks/warehop',
-    live: 'https://www.stevenjuks.me/projects/warehopv1',
+    github: 'https://github.com/stjuks/warehop-frontend-ts',
     tech: [
       'React',
       'Styled Components',
@@ -51,8 +50,8 @@ export const projects = [
   {
     name: 'Communication Diary',
     duration: "Mar - May '20",
-    github: 'https://www.github.com/stjuks/warehop',
-    live: 'https://www.stevenjuks.me/projects/warehopv1',
+    github: 'https://github.com/stjuks/commdiary',
+    live: 'https://www.stevenjuks.me/projects/commdiary',
     tech: ['React', 'Styled Components', 'TypeScript', 'LocalStorage'],
     previewImage: commdiaryPreview,
     description:
@@ -61,8 +60,8 @@ export const projects = [
   {
     name: 'Portfolio',
     duration: "May - Jun '20",
-    github: 'https://www.github.com/stjuks/warehop',
-    live: 'https://www.stevenjuks.me/projects/warehopv1',
+    github: 'https://github.com/stjuks/portfolio2020v2',
+    live: 'https://www.stevenjuks.me',
     tech: ['React', 'Styled Components', 'Framer Motion'],
     previewImage: portfolioPreview,
     description:

@@ -104,6 +104,43 @@ export const Code = () => (
   </svg>
 );
 
+export const LongArrowRight = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="50.5"
+    height="6"
+    viewBox="0 0 50.5 6"
+  >
+    <g id="Group_5" data-name="Group 5" transform="translate(-543 -738.958)">
+      <line
+        id="Line_56"
+        data-name="Line 56"
+        x2="47"
+        transform="translate(543 742)"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+      />
+      <g
+        id="Path_14"
+        data-name="Path 14"
+        transform="translate(593.5 739) rotate(90)"
+        fill="currentColor"
+      >
+        <path
+          d="M 1.270936608314514 6.085025310516357 L 2.993391513824463 1.452473998069763 L 4.653284549713135 6.04427433013916 L 3.366233348846436 4.659594535827637 L 3.005123376846313 4.271104335784912 L 2.638593435287476 4.654484272003174 L 1.270936608314514 6.085025310516357 Z"
+          stroke="none"
+        />
+        <path
+          d="M 2.986786127090454 2.904962062835693 L 2.584130525588989 3.987906455993652 L 3.010253429412842 3.542194366455078 L 3.348809003829956 3.906434535980225 L 2.986786127090454 2.904962062835693 M 3.000003337860107 4.76837158203125e-06 L 5.957763671875 8.182124137878418 L 3.000003337860107 5.000004768371582 L -0.0422368049621582 8.182124137878418 L 3.000003337860107 4.76837158203125e-06 Z"
+          stroke="none"
+          fill="currentColor"
+        />
+      </g>
+    </g>
+  </svg>
+);
+
 export const Play = () => (
   <svg
     stroke="currentColor"

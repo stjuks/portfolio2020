@@ -24,17 +24,6 @@ function DetailRow({ children, index }) {
 
 function DetailRows({ project }) {
   const rows = [
-    /*<div className="row">
-      <div className="duration">{project.duration}</div>
-      <div className="actions">
-        <a href="">
-          <Code />
-        </a>
-        <a href="">
-          <Play />
-        </a>
-      </div>
-    </div>*/
     <div className="duration">{project.duration}</div>,
     <div className="tech-list">
       {project.tech?.map((tech) => (
@@ -43,10 +32,12 @@ function DetailRows({ project }) {
     </div>,
     <div className="description">{project.description}</div>,
     <div style={{ display: 'flex' }}>
-      <TextLink href="">View code</TextLink>
-      <TextLink href="" style={{ marginLeft: '0.75rem' }}>
-        View live
-      </TextLink>
+      <TextLink href={project.github}>View code</TextLink>
+      {project.live && (
+        <TextLink href={project.live} style={{ marginLeft: '0.75rem' }}>
+          View live
+        </TextLink>
+      )}
     </div>
   ];
 
@@ -98,7 +89,10 @@ function ProjectItem({ project }) {
                   }}
                 />
               </div>
-              <motion.div className="hover-overlay" animate={{ opacity: isOpened ? 1 : 0 }} />
+              <motion.div
+                className="hover-overlay"
+                animate={{ opacity: isOpened ? 1 : 0 }}
+              />
               <div
                 className="project-details"
                 style={{
@@ -117,7 +111,9 @@ function ProjectItem({ project }) {
                 >
                   {project.name}
                 </motion.div>
-                <AnimatePresence>{isOpened && <DetailRows project={project} />}</AnimatePresence>
+                <AnimatePresence>
+                  {isOpened && <DetailRows project={project} />}
+                </AnimatePresence>
               </div>
             </motion.div>
           );

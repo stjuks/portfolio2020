@@ -33,6 +33,30 @@ export const AboutContainer = styled.div`
 
     .text-link {
       margin: 1rem 0;
+
+      svg {
+        position: absolute;
+        left: -4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.2s;
+        opacity: 0.5;
+      }
+
+      :hover svg {
+        transform: translate(20%, -50%);
+        opacity: 1;
+      }
+
+      ${media.m`
+        svg {
+          display: none;
+        }
+      `}
+    }
+
+    .resume-link {
+      margin-top: 4rem;
     }
   }
 `;

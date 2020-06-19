@@ -19,7 +19,7 @@ export const FixedBackgroundContainer = styled(motion.div)`
     .bg-line {
       height: 1px;
       width: 100%;
-      background: ${theme.colors.white.opacity(0.1)};
+      background: ${theme.colors.white.opacity(0.025)};
       
       :first-child,
       :last-child {
