@@ -2,14 +2,19 @@ import React from 'react';
 import { FrameContainer } from './styles';
 import { GitHub, LinkedIn, Mail, Instagram } from '../icons';
 import { scrollIntoView } from '../../util';
+import { links } from '../../util/data';
 
-const ContactIcon = ({ icon }) => (
-  <a href="" className="icon-container">
+const ContactIcon = ({ icon, href }) => (
+  <a href={href} className="icon-container">
     {icon}
   </a>
 );
 
-const icons = [<GitHub />, <LinkedIn />, <Mail />, <Instagram />];
+const icons = [
+  { icon: <GitHub />, href: links.github },
+  { icon: <LinkedIn />, href: links.linkedin },
+  { icon: <Mail />, href: `mailto:${links.email}` }
+];
 
 function Frame() {
   const handleLinkClick = (e) => {
@@ -34,8 +39,8 @@ function Frame() {
         </div>
       </div>
       <div className="contact-links">
-        {icons.map((icon) => (
-          <ContactIcon icon={icon} />
+        {icons.map((item) => (
+          <ContactIcon {...item} />
         ))}
       </div>
     </FrameContainer>

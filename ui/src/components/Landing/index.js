@@ -17,7 +17,7 @@ function Landing() {
   };
 
   return (
-    <LandingContainer ref={ref} id="landing">
+    <LandingContainer ref={ref} name="landing">
       {inView && (
         <>
           <motion.div

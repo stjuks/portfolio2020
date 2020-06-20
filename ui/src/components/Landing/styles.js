@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import mixins from '../../styles/mixins';
 import theme from '../../styles/theme';
 import media from '../../styles/media';
+import Section from '../Section';
 
-export const LandingContainer = styled.div`
+export const LandingContainer = styled(Section)`
   ${mixins.flexCenter}
 
   color: white;

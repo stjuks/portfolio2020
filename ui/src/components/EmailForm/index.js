@@ -62,7 +62,7 @@ function EmailForm() {
           />
         </label>
         <label className="input-container">
-          <div className="label">Email</div>
+          <div className="label">Your email</div>
           <input
             type="email"
             name="email"

@@ -44,8 +44,7 @@ export const projects = [
       'Pug'
     ],
     previewImage: warehopv2Preview,
-    description:
-      'A new and improved iteration of Warehop 1.0 with responsive design and refactored codebase.'
+    description: 'A new and improved iteration of Warehop 1.0 with responsive design and refactored codebase.'
   },
   {
     name: 'Communication Diary',
@@ -68,3 +67,11 @@ export const projects = [
       'A cash-basis accounting based inventory management application aimed towards Estonian sole proprietors.'
   }
 ];
+
+export const links = {
+  fbMsg: 'https://m.me/steven.juks',
+  instagram: 'https://instagram.com/stevenjuks',
+  email: 'stevenjuks@hotmail.com',
+  linkedin: 'https://www.linkedin.com/in/steven-juks-b7a511169/',
+  github: 'https://github.com/stjuks'
+};
