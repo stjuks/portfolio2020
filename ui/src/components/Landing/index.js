@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useViewportScroll } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { LandingContainer } from './styles';
@@ -17,6 +17,9 @@ function Landing() {
       behavior: 'smooth'
     });
   };
+
+  const scroll = useViewportScroll();
+  console.log(scroll);
 
   return (
     <LandingContainer ref={ref}>
