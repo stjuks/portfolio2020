@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const outlookMail = require('nodejs-nodemailer-outlook');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
@@ -11,10 +12,12 @@ const PORT = process.env.PORT || 5000;
 const FRONTEND_FOLDER = path.join(__dirname, '..', 'ui', 'build');
 const FRONTEND_INDEX = path.join(FRONTEND_FOLDER, 'index.html');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(FRONTEND_FOLDER));
 
 app.post('/api/sendEmail', (req, res) => {
+  console.log(req.body);
   const { email, name, message } = req.body;
 
   const subject = `Portfolio message from ${name}`;

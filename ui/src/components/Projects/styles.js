@@ -25,7 +25,7 @@ export const ProjectsContainer = styled.div`
     `}
 
     ${media.s`
-      padding: 10rem 1rem;
+      padding: 3rem 1rem;
     `}
   }
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export const GitHub = () => (
   <svg
@@ -156,4 +157,26 @@ export const Play = () => (
     {/* <polygon points="5 3 19 12 5 21 5 3"></polygon> */}
     <polygon points="6 3 20 12 6 21 6 3"></polygon>
   </svg>
+);
+
+export const Loader = (props) => (
+  <motion.svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="xMidYMid"
+    {...props}
+  >
+    <circle
+      cx="50"
+      cy="50"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="10"
+      r="35"
+      stroke-dasharray="164.93361431346415 56.97787143782138"
+      transform="matrix(1,0,0,1,0,0)"
+    ></circle>
+  </motion.svg>
 );

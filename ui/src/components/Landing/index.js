@@ -10,6 +10,14 @@ function Landing() {
   const scrollPos = useScroll();
   const [ref, inView] = useInView();
 
+  const handleNextPageClick = (e) => {
+    e.preventDefault();
+    window.scrollBy({
+      top: window.outerHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <LandingContainer ref={ref}>
       {inView && (
@@ -19,14 +27,23 @@ function Landing() {
             initial={{ rotate: -20, skew: -45 }}
             animate={{ rotate: scrollPos / 50, skew: scrollPos / 20 }}
           >
-            <motion.div className="top-line" initial={{ x: '-100%' }} animate={{ x: scrollPos }}>
+            <motion.div
+              className="top-line"
+              initial={{ x: '-100%' }}
+              animate={{ x: scrollPos }}
+            >
               STEVEN
             </motion.div>
-            <motion.div className="bottom-line" initial={{ x: '100%' }} animate={{ x: -scrollPos }}>
+            <motion.div
+              className="bottom-line"
+              initial={{ x: '100%' }}
+              animate={{ x: -scrollPos }}
+            >
               JUKS<span className="point">.</span>
             </motion.div>
           </motion.div>
           <motion.button
+            onClick={handleNextPageClick}
             className="next-page-btn"
             initial={{ opacity: 0, x: '-50%' }}
             animate={{

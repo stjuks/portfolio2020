@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
+import mixins from '../../styles/mixins';
 
 export const EmailFormContainer = styled.div`
   font-family: ${theme.fonts.sansSerif};
@@ -40,17 +41,34 @@ export const EmailFormContainer = styled.div`
     padding-top: 0.5rem;
     min-height: 4rem;
   }
-  
+
+  .form-message {
+    color: ${theme.colors.orange};
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
   .submit-btn {
     padding: 0.5rem 1rem;
     background: ${theme.colors.black};
     border: 1px solid ${theme.colors.orange};
     font-family: ${theme.fonts.serif};
-    transition: all .2s;
+    transition: all 0.2s;
+    position: relative;
 
     :hover,
     :focus {
       background: ${theme.colors.orange};
+    }
+
+    .loader {
+      ${mixins.engulf}
+
+      &, .loader-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 `;

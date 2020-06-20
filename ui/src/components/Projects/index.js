@@ -7,7 +7,7 @@ import ProjectItem from './ProjectItem';
 function Projects() {
   return (
     <ProjectsContainer>
-      <div className="projects__wrapper">
+      <div className="projects__wrapper" id="projects">
         {projects.map((project) => (
           <ProjectItem project={project} />
         ))}
