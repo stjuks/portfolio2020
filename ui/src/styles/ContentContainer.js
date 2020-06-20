@@ -12,10 +12,7 @@ export default styled.div`
   margin: 0 auto;
 
   ${media.s`
-    padding: 0 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   `}
-
-  p {
-    margin: 2rem 0;
-  }
 `;

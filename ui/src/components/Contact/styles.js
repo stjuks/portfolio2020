@@ -3,9 +3,12 @@ import media from '../../styles/media';
 import ContentContainer from '../../styles/ContentContainer';
 
 export const ContactContainer = styled(ContentContainer)`
-  padding-top: 3rem;
   margin-top: 2rem;
   display: block;
+
+  .contact-section {
+    padding-top: 3rem;
+  }
 
   .text-link {
     margin: 1rem 0;

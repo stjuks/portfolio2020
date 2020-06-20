@@ -19,6 +19,7 @@ export const FrameContainer = styled.div`
     padding: 1.5rem;
     box-sizing: border-box;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     background: linear-gradient(to bottom, ${theme.colors.black.opacity(0.5)}, transparent);
     color: ${theme.colors.white};
@@ -39,6 +40,40 @@ export const FrameContainer = styled.div`
 
   .links {
     margin-left: auto;
+    display: flex;
+
+    .link {
+      position: relative;
+      color: ${theme.colors.white};
+      transition: all 0.5s;
+
+      :before {
+        content: '';
+        position: absolute;
+        left: -0.125rem;
+        top: 50%;
+        height: 2px;
+        width: calc(100% + 0.25rem);
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: all 0.3s;
+      }
+
+      :focus,
+      :hover {
+        :before {
+          transform: scaleX(1);
+          background: ${theme.colors.white};
+        }
+      }
+    }
+
+    .link[data-active='true'] {
+      :before {
+        transform: scaleX(1);
+        background: ${theme.colors.orange};
+      }
+    }
 
     .link:not(:first-child) {
       margin-left: 1rem;
@@ -48,7 +83,7 @@ export const FrameContainer = styled.div`
       margin-right: 1rem;
     }
 
-    button {
+    .resume-link {
       color: ${theme.colors.orange};
     }
   }

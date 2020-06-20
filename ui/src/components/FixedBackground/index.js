@@ -3,7 +3,7 @@ import { FixedBackgroundContainer } from './styles';
 import { useScroll } from '../../util/hooks';
 
 const Lines = () => {
-  const lineAmount = 13;
+  const lineAmount = 7;
   const lines = [];
 
   for (let i = 0; i < lineAmount; i++) {

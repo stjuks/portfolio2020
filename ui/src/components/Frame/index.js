@@ -3,6 +3,7 @@ import { FrameContainer } from './styles';
 import { GitHub, LinkedIn, Mail, Instagram } from '../icons';
 import { scrollIntoView } from '../../util';
 import { links } from '../../util/data';
+import ViewContext from '../../util/ViewContext';
 
 const ContactIcon = ({ icon, href }) => (
   <a href={href} className="icon-container">
@@ -17,10 +18,14 @@ const icons = [
 ];
 
 function Frame() {
+  const { activeView } = React.useContext(ViewContext);
+
   const handleLinkClick = (e) => {
     e.preventDefault();
     scrollIntoView(e.target.getAttribute('href'));
   };
+
+  console.log('active', activeView);
 
   return (
     <FrameContainer>
@@ -29,13 +34,13 @@ function Frame() {
           SJ<span>.</span>
         </a>
         <div className="links">
-          <a href="#projects" className="link" onClick={handleLinkClick}>
+          <a href="#projects" data-active={activeView === 'projects'} className="link" onClick={handleLinkClick}>
             Work
           </a>
-          <a href="#contact" className="link" onClick={handleLinkClick}>
+          <a href="#contact" data-active={activeView === 'contact'} className="link" onClick={handleLinkClick}>
             Contact
           </a>
-          <button className="link">Resume</button>
+          <button className="link resume-link">Resume</button>
         </div>
       </div>
       <div className="contact-links">

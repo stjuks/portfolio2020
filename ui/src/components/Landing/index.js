@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -9,7 +9,6 @@ import { scrollIntoView } from '../../util';
 
 function Landing() {
   const scrollPos = useScroll();
-  const [ref, inView] = useInView();
 
   const handleNextPageClick = (e) => {
     e.preventDefault();
@@ -17,8 +16,8 @@ function Landing() {
   };
 
   return (
-    <LandingContainer ref={ref} name="landing">
-      {inView && (
+    <LandingContainer name="landing">
+      {scrollPos < window.outerHeight && (
         <>
           <motion.div
             className="title-container"

@@ -8,7 +8,7 @@ export const FixedBackgroundContainer = styled(motion.div)`
 
   background: ${theme.colors.black};
   z-index: -1;
-  height: 200vh;
+  height: 100vh;
 
   .lines-container {
     display: flex;

@@ -46,7 +46,7 @@ function DetailRows({ project }) {
 
 function ProjectItem({ project }) {
   const [isHovering, setHovering] = useState(false);
-  const [ref, inView] = useInView({ triggerOnce: true });
+  const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '-15% 0px' });
 
   return (
     <ProjectItemContainer ref={ref}>
