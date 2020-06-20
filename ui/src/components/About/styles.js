@@ -28,7 +28,8 @@ export const AboutContainer = styled.div`
   }
 
   .contact {
-    margin-top: 5rem;
+    padding-top: 3rem;
+    margin-top: 2rem;
     display: block;
 
     .text-link {
@@ -43,9 +44,12 @@ export const AboutContainer = styled.div`
         opacity: 0.5;
       }
 
-      :hover svg {
-        transform: translate(20%, -50%);
-        opacity: 1;
+      :hover,
+      :focus {
+        svg {
+          transform: translate(20%, -50%);
+          opacity: 1;
+        }
       }
 
       ${media.m`

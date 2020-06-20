@@ -49,8 +49,6 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     background: ${theme.colors.black};
-    scroll-behavior: smooth;
-
   }
 
   body,

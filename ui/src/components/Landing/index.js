@@ -1,10 +1,11 @@
 import React from 'react';
-import { motion, useViewportScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { LandingContainer } from './styles';
 import { LongArrowDown } from '../icons';
 import { useScroll } from '../../util/hooks';
+import { scrollIntoView } from '../../util';
 
 function Landing() {
   const scrollPos = useScroll();
@@ -12,34 +13,25 @@ function Landing() {
 
   const handleNextPageClick = (e) => {
     e.preventDefault();
-    window.scrollBy({
-      top: window.outerHeight,
-      behavior: 'smooth'
-    });
+    scrollIntoView('#projects');
   };
 
-  const scroll = useViewportScroll();
-  console.log(scroll);
-
   return (
-    <LandingContainer ref={ref}>
+    <LandingContainer ref={ref} id="landing">
       {inView && (
         <>
           <motion.div
             className="title-container"
-            initial={{ rotate: -20, skew: -45 }}
             animate={{ rotate: scrollPos / 50, skew: scrollPos / 20 }}
           >
             <motion.div
               className="top-line"
-              initial={{ x: '-100%' }}
               animate={{ x: scrollPos }}
             >
               STEVEN
             </motion.div>
             <motion.div
               className="bottom-line"
-              initial={{ x: '100%' }}
               animate={{ x: -scrollPos }}
             >
               JUKS<span className="point">.</span>

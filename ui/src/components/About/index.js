@@ -21,7 +21,7 @@ function About() {
           on interesting projects to develop my skills further. If you have an
           offer, feel free to <strong>get in touch</strong> via the links below.
         </p>
-        <div className="contact">
+        <div className="contact" id="contact">
           <h3 className="med-title">CONTACT ME</h3>
           <TextLink href="mailto:stevenjuks@hotmail.com">E-mail</TextLink>
           <TextLink

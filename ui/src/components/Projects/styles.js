@@ -10,14 +10,15 @@ export const ProjectsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10vw;
-    padding: 10rem 10vw;
+    margin: 2.5rem 0;
+    padding: 7.5rem 10vw;
     width: 100%;
     height: 100%;
     max-width: 60rem;
 
     ${media.l`
       grid-gap: 5vw;
-      padding: 10rem 4rem;
+      padding: 7.5rem 4rem;
     `}
 
     ${media.m`
@@ -25,7 +26,8 @@ export const ProjectsContainer = styled.div`
     `}
 
     ${media.s`
-      padding: 3rem 1rem;
+      margin: 0;
+      padding: 0rem 1rem;
     `}
   }
 `;
