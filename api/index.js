@@ -9,7 +9,7 @@ const cors = require('cors');
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-const FRONTEND_FOLDER = path.join(__dirname, '..', 'ui', 'build');
+const FRONTEND_FOLDER = path.join(__dirname, 'build');
 const FRONTEND_INDEX = path.join(FRONTEND_FOLDER, 'index.html');
 
 app.use(cors());

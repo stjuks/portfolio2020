@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EmailFormContainer } from './styles';
 import { Loader } from '../icons';
+import { buildAPIURL } from '../../util';
 
 const DEFAULT_VALUES = {
   name: '',
@@ -27,7 +28,7 @@ function EmailForm() {
     try {
       setLoading(true);
 
-      const req = await fetch(`${protocol}//${hostname}:5001/api/sendEmail`, {
+      const req = await fetch(buildAPIURL('/api/sendEmail'), {
         method: 'post',
         headers: {
           Accept: 'application/json',
@@ -36,7 +37,11 @@ function EmailForm() {
         body: JSON.stringify(values)
       });
 
-      setFormMessage('Message successfully sent. :)');
+      if (req.status !== 200) {
+        throw new Error();
+      }
+
+      setFormMessage("Message successfully sent. I'll get back to you ASAP. :)");
       setValues(DEFAULT_VALUES);
     } catch (err) {
       setFormMessage('Error sending message.');
@@ -84,10 +89,7 @@ function EmailForm() {
           />
         </label>
         <button type="submit" disabled={isLoading} className="submit-btn">
-          <motion.div
-            className="btn-text"
-            animate={{ scale: isLoading ? 0.5 : 1, opacity: isLoading ? 0 : 1 }}
-          >
+          <motion.div className="btn-text" animate={{ scale: isLoading ? 0.5 : 1, opacity: isLoading ? 0 : 1 }}>
             Send
           </motion.div>
           {isLoading && (
