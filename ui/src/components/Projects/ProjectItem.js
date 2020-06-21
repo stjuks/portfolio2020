@@ -26,8 +26,10 @@ function DetailRows({ project }) {
   const rows = [
     <div className="duration">{project.duration}</div>,
     <div className="tech-list">
-      {project.tech?.map((tech) => (
-        <div className="tech-item">{tech}</div>
+      {project.tech.map((tech) => (
+        <div key={tech} className="tech-item">
+          {tech}
+        </div>
       ))}
     </div>,
     <div className="description">{project.description}</div>,
@@ -41,7 +43,11 @@ function DetailRows({ project }) {
     </div>
   ];
 
-  return rows.map((row, i) => <DetailRow index={i}>{row}</DetailRow>);
+  return rows.map((row, i) => (
+    <DetailRow key={i} index={i}>
+      {row}
+    </DetailRow>
+  ));
 }
 
 function ProjectItem({ project }) {
@@ -89,10 +95,7 @@ function ProjectItem({ project }) {
                   }}
                 />
               </div>
-              <motion.div
-                className="hover-overlay"
-                animate={{ opacity: isOpened ? 1 : 0 }}
-              />
+              <motion.div className="hover-overlay" animate={{ opacity: isOpened ? 1 : 0 }} />
               <div
                 className="project-details"
                 style={{
@@ -111,9 +114,7 @@ function ProjectItem({ project }) {
                 >
                   {project.name}
                 </motion.div>
-                <AnimatePresence>
-                  {isOpened && <DetailRows project={project} />}
-                </AnimatePresence>
+                <AnimatePresence>{isOpened && <DetailRows project={project} />}</AnimatePresence>
               </div>
             </motion.div>
           );

@@ -4,7 +4,7 @@ import ViewContext from '../util/ViewContext';
 
 function Section({ children, name, ...restProps }) {
   const [ref, inView] = useInView({ rootMargin: '-50% 0px' });
-  const { activeView, setActiveView } = React.useContext(ViewContext);
+  const { setActiveView } = React.useContext(ViewContext);
 
   useEffect(() => {
     if (inView) {

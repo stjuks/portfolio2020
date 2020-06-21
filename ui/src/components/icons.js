@@ -35,8 +35,8 @@ export const Mail = () => (
     fill="none"
     strokeWidth="1.75"
     viewBox="0 0 24 24"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export const LongArrowDown = () => (
         data-name="Line 58"
         y1="40"
         transform="translate(997.5 960)"
-        stroke-width="1"
+        strokeWidth="1"
       />
       <path
         id="Path_21"
@@ -92,10 +92,10 @@ export const Code = () => (
   <svg
     stroke="currentColor"
     fill="none"
-    stroke-width="2"
+    strokeWidth="2"
     viewBox="0 0 24 24"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@ export const LongArrowRight = () => (
         transform="translate(543 742)"
         fill="none"
         stroke="currentColor"
-        stroke-width="1"
+        strokeWidth="1"
       />
       <g
         id="Path_14"
@@ -146,36 +146,34 @@ export const Play = () => (
   <svg
     stroke="currentColor"
     fill="none"
-    stroke-width="2"
+    strokeWidth="2"
     viewBox="0 0 24 24"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {/* <polygon points="5 3 19 12 5 21 5 3"></polygon> */}
     <polygon points="6 3 20 12 6 21 6 3"></polygon>
   </svg>
 );
 
-export const Loader = (props) => (
+export const Loader = () => (
   <motion.svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
     viewBox="0 0 100 100"
     preserveAspectRatio="xMidYMid"
-    {...props}
   >
     <circle
       cx="50"
       cy="50"
       fill="none"
       stroke="currentColor"
-      stroke-width="10"
+      strokeWidth="10"
       r="35"
-      stroke-dasharray="164.93361431346415 56.97787143782138"
+      strokeDasharray="164.93361431346415 56.97787143782138"
       transform="matrix(1,0,0,1,0,0)"
     ></circle>
   </motion.svg>

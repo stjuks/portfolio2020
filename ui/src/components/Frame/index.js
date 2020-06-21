@@ -25,8 +25,6 @@ function Frame() {
     scrollIntoView(e.target.getAttribute('href'));
   };
 
-  console.log('active', activeView);
-
   return (
     <FrameContainer>
       <div className="navbar">
@@ -40,12 +38,14 @@ function Frame() {
           <a href="#contact" data-active={activeView === 'contact'} className="link" onClick={handleLinkClick}>
             Contact
           </a>
-          <button className="link resume-link">Resume</button>
+          <a href={links.resume} target="_blank" className="link resume-link">
+            Resume
+          </a>
         </div>
       </div>
       <div className="contact-links">
         {icons.map((item) => (
-          <ContactIcon {...item} />
+          <ContactIcon key={item.href} {...item} />
         ))}
       </div>
     </FrameContainer>

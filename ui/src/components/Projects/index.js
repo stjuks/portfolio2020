@@ -10,7 +10,7 @@ function Projects() {
     <ProjectsContainer>
       <Section className="projects__wrapper" name="projects">
         {projects.map((project) => (
-          <ProjectItem project={project} />
+          <ProjectItem key={project.name} project={project} />
         ))}
       </Section>
     </ProjectsContainer>

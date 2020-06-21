@@ -50,10 +50,10 @@ export const FrameContainer = styled.div`
       :before {
         content: '';
         position: absolute;
-        left: -0.125rem;
-        top: 50%;
+        left: 0;
+        top: 100%;
         height: 2px;
-        width: calc(100% + 0.25rem);
+        width: 100%;
         transform-origin: left;
         transform: scaleX(0);
         transition: all 0.3s;

@@ -2,6 +2,7 @@ import warehopv1Preview from '../assets/images/warehop-1-sample.jpg';
 import warehopv2Preview from '../assets/images/warehop-2-sample.jpg';
 import portfolioPreview from '../assets/images/portfolio-sample.jpg';
 import commdiaryPreview from '../assets/images/commdiary-sample.jpg';
+import resumeEn from '../assets/files/cv_en.pdf';
 
 export const projects = [
   {
@@ -23,7 +24,7 @@ export const projects = [
     ],
     previewImage: warehopv1Preview,
     description:
-      'A cash-basis accounting based inventory management application aimed towards Estonian sole proprietors.'
+      "An inventory management web app developed as the main part of my bachelor's thesis. It is meant to give a simple, bare-bones approach for inventory management to Estonian sole proprietors."
   },
   {
     name: 'Warehop 2.0',
@@ -44,7 +45,8 @@ export const projects = [
       'Pug'
     ],
     previewImage: warehopv2Preview,
-    description: 'A new and improved iteration of Warehop 1.0 with responsive design and refactored codebase.'
+    description:
+      'A new and improved iteration of Warehop 1.0 with responsive design and refactored codebase. (Currently WIP)'
   },
   {
     name: 'Communication Diary',
@@ -53,25 +55,22 @@ export const projects = [
     live: 'https://www.stevenjuks.me/projects/commdiary',
     tech: ['React', 'Styled Components', 'TypeScript', 'LocalStorage'],
     previewImage: commdiaryPreview,
-    description:
-      'A cash-basis accounting based inventory management application aimed towards Estonian sole proprietors.'
+    description: 'A local web app I developed during my conscription to simplify logging military radio communication.'
   },
   {
     name: 'Portfolio',
     duration: "May - Jun '20",
     github: 'https://github.com/stjuks/portfolio2020v2',
-    live: 'https://www.stevenjuks.me',
     tech: ['React', 'Styled Components', 'Framer Motion'],
     previewImage: portfolioPreview,
-    description:
-      'A cash-basis accounting based inventory management application aimed towards Estonian sole proprietors.'
+    description: "The page you're currently looking at :). A portfolio site to give a quick introduction of myself."
   }
 ];
 
 export const links = {
   fbMsg: 'https://m.me/steven.juks',
-  instagram: 'https://instagram.com/stevenjuks',
   email: 'stevenjuks@hotmail.com',
   linkedin: 'https://www.linkedin.com/in/steven-juks-b7a511169/',
-  github: 'https://github.com/stjuks'
+  github: 'https://github.com/stjuks',
+  resume: resumeEn
 };

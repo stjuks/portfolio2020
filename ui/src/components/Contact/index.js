@@ -15,7 +15,7 @@ function Contact() {
         <TextLink href={links.linkedin}>LinkedIn</TextLink>
         <TextLink href={links.github}>GitHub</TextLink>
         <TextLink href={links.fbMsg}>FB Messenger</TextLink>
-        <TextLink href="" className="resume-link">
+        <TextLink href={links.resume} className="resume-link">
           <LongArrowRight />
           Check out my resume
         </TextLink>
