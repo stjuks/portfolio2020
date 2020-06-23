@@ -7,7 +7,7 @@ function About() {
     <AboutContainer>
       <Section name="about">
         <p>
-          Hello, I'm Steven Juks, an avid <strong>front-end developer</strong> who enjoys taking on new challenges and
+          Hello, I'm Steven Juks, an avid <strong>front-end developer</strong> from Estonia who enjoys taking on new challenges and
           is always looking for ways to improve. I value <strong>critical thinking</strong>,{' '}
           <strong>punctuality</strong> and
           <strong> attention to detail</strong>.

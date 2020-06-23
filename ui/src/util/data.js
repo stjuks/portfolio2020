@@ -61,7 +61,7 @@ export const projects = [
     name: 'Portfolio',
     duration: "May - Jun '20",
     github: 'https://github.com/stjuks/portfolio2020',
-    tech: ['React', 'Styled Components', 'Framer Motion'],
+    tech: ['React', 'Styled Components', 'Framer Motion', 'Adobe XD'],
     previewImage: portfolioPreview,
     description: "The page you're currently looking at :). A portfolio site to give a quick introduction of myself."
   }
