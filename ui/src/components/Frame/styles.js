@@ -51,7 +51,7 @@ export const FrameContainer = styled.div`
         content: '';
         position: absolute;
         left: 0;
-        top: 100%;
+        top: 50%;
         height: 2px;
         width: 100%;
         transform-origin: left;
@@ -59,16 +59,18 @@ export const FrameContainer = styled.div`
         transition: all 0.3s;
       }
 
-      :focus,
-      :hover {
+      :hover,
+      :focus {
         :before {
           transform: scaleX(1);
           background: ${theme.colors.white};
-        }
+        } 
       }
     }
 
     .link[data-active='true'] {
+      color: ${theme.colors.white};
+
       :before {
         transform: scaleX(1);
         background: ${theme.colors.orange};
@@ -94,23 +96,94 @@ export const FrameContainer = styled.div`
     color: ${theme.colors.orange};
     position: absolute;
     bottom: 0;
-    margin: 1.5rem;
 
     ${media.s`
       display: none;
     `}
 
-    .icon-container {
+    .contact-link {
+      padding: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+
+      :hover,
+      :focus {
+        .icon-container {
+          transform: translate(calc(-100% - 1.5rem), -50%);
+          
+          :after {
+            opacity: 1;
+            color: ${theme.colors.white};
+            pointer-events: auto;
+          }
+        }
+      }
+
+      .icon-container {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transition: all .2s;
+
+        ${mixins.flexCenter}
+
+        :after {
+          content: attr(data-label);
+          transition: all .2s;
+          opacity: 0;
+          font-size: 0.75rem;
+          pointer-events: none;
+          position: absolute;
+          left: 2rem;
+        }
+      }
+    }
+
+    /* .contact-link {
       transition: all 0.2s;
       outline: none;
+      position: relative;
 
       :hover,
       :focus {
         color: ${theme.colors.white};
+
+        .icon-container {
+          transform: translateX(-2rem);
+          
+          svg {
+            opacity: 0;
+          }
+
+          :before {
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
       }
+
       :not(:last-child) {
         margin-bottom: 2.5rem;
       }
-    }
+
+      .icon-container {
+        transition: all .2s;
+
+        :before {
+          position: absolute;
+          left: 2rem;
+          transform: translateY(-50%);
+          top: 45%;
+          pointer-events: none;
+          opacity: 0;
+          content: attr(data-label);
+          transition: all .2s;
+          font-family: ${theme.fonts.sansSerif};
+          font-weight: 500;
+          font-size: 0.75rem;
+        }
+      }
+    } */
   }
 `;

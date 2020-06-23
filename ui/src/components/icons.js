@@ -71,13 +71,7 @@ export const LongArrowDown = () => (
     strokeWidth="0"
   >
     <g id="arrow-down" transform="translate(-992.1 -960)">
-      <line
-        id="Line_58"
-        data-name="Line 58"
-        y1="40"
-        transform="translate(997.5 960)"
-        strokeWidth="1"
-      />
+      <line id="Line_58" data-name="Line 58" y1="40" transform="translate(997.5 960)" strokeWidth="1" />
       <path
         id="Path_21"
         data-name="Path 21"
@@ -106,12 +100,7 @@ export const Code = () => (
 );
 
 export const LongArrowRight = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="50.5"
-    height="6"
-    viewBox="0 0 50.5 6"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="50.5" height="6" viewBox="0 0 50.5 6">
     <g id="Group_5" data-name="Group 5" transform="translate(-543 -738.958)">
       <line
         id="Line_56"
@@ -122,12 +111,7 @@ export const LongArrowRight = () => (
         stroke="currentColor"
         strokeWidth="1"
       />
-      <g
-        id="Path_14"
-        data-name="Path 14"
-        transform="translate(593.5 739) rotate(90)"
-        fill="currentColor"
-      >
+      <g id="Path_14" data-name="Path 14" transform="translate(593.5 739) rotate(90)" fill="currentColor">
         <path
           d="M 1.270936608314514 6.085025310516357 L 2.993391513824463 1.452473998069763 L 4.653284549713135 6.04427433013916 L 3.366233348846436 4.659594535827637 L 3.005123376846313 4.271104335784912 L 2.638593435287476 4.654484272003174 L 1.270936608314514 6.085025310516357 Z"
           stroke="none"
@@ -177,4 +161,21 @@ export const Loader = () => (
       transform="matrix(1,0,0,1,0,0)"
     ></circle>
   </motion.svg>
+);
+
+export const File = () => (
+  <svg
+    stroke="currentColor"
+    fill="none"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    height="1em"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+    <polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
 );

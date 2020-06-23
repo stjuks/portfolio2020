@@ -1,20 +1,23 @@
 import React from 'react';
 import { FrameContainer } from './styles';
-import { GitHub, LinkedIn, Mail, Instagram } from '../icons';
+import { GitHub, LinkedIn, Mail, File } from '../icons';
 import { scrollIntoView } from '../../util';
 import { links } from '../../util/data';
 import ViewContext from '../../util/ViewContext';
 
-const ContactIcon = ({ icon, href }) => (
-  <a href={href} className="icon-container">
-    {icon}
+const ContactIcon = ({ icon, href, label }) => (
+  <a href={href} className="contact-link" target="_blank" tabIndex={1}>
+    <span className="icon-container" data-label={label}>
+      {icon}
+    </span>
   </a>
 );
 
 const icons = [
-  { icon: <GitHub />, href: links.github },
-  { icon: <LinkedIn />, href: links.linkedin },
-  { icon: <Mail />, href: `mailto:${links.email}` }
+  { icon: <File />, href: links.resume, label: 'Resume' },
+  { icon: <GitHub />, href: links.github, label: 'GitHub' },
+  { icon: <LinkedIn />, href: links.linkedin, label: 'LinkedIn' },
+  { icon: <Mail />, href: `mailto:${links.email}`, label: 'Email' }
 ];
 
 function Frame() {
@@ -37,9 +40,6 @@ function Frame() {
           </a>
           <a href="#contact" data-active={activeView === 'contact'} className="link" onClick={handleLinkClick}>
             Contact
-          </a>
-          <a href={links.resume} target="_blank" className="link resume-link">
-            Resume
           </a>
         </div>
       </div>
