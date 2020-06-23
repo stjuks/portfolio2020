@@ -51,8 +51,14 @@ function DetailRows({ project }) {
 }
 
 function ProjectItem({ project }) {
+  const [debug, setDebug] = useState('');
   const [isHovering, setHovering] = useState(false);
+  const [isTouched, setTouched] = useState(false);
   const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '-15% 0px' });
+
+  const addDebug = (msg) => {
+    setDebug(debug + msg);
+  };
 
   return (
     <ProjectItemContainer ref={ref}>
@@ -64,16 +70,28 @@ function ProjectItem({ project }) {
             if (isOpened) {
               focusProps.onBlur(e);
               setHovering(false);
+              setTouched(false);
             } else {
               focusProps.onFocus(e);
+              setHovering(true);
             }
+          };
+
+          const handleHoverStart = () => {
+            if (!isTouched) setHovering(true);
+          };
+
+          const handleHoverEnd = () => {
+            setHovering(false);
+          };
+
+          const handleTouchStart = () => {
+            setTouched(true);
           };
 
           return (
             <motion.div
               className="preview-image__wrapper"
-              onHoverStart={() => setHovering(true)}
-              onHoverEnd={() => setHovering(false)}
               animate={{
                 y: inView ? 0 : '20%',
                 opacity: inView ? 1 : 0,
@@ -81,6 +99,9 @@ function ProjectItem({ project }) {
               }}
               transition={{ duration: 0.5, delay: 0.3 }}
               tabIndex={0}
+              onHoverStart={handleHoverStart}
+              onHoverEnd={handleHoverEnd}
+              onTouchStart={handleTouchStart}
               onClick={handleClick}
               {...focusProps}
             >

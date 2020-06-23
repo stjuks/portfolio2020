@@ -70,7 +70,7 @@ export const projects = [
 export const links = {
   fbMsg: 'https://m.me/steven.juks',
   email: 'stevenjuks@hotmail.com',
-  linkedin: 'https://www.linkedin.com/in/steven-juks-b7a511169/',
+  linkedin: 'https://www.linkedin.com/in/stevenjuks',
   github: 'https://github.com/stjuks',
   resume: resumeEn
 };
