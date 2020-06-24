@@ -10,6 +10,10 @@ export const ContactContainer = styled(ContentContainer)`
     padding-top: 3rem;
   }
 
+  h3 {
+    text-transform: uppercase;
+  }
+
   .text-link {
     margin: 1rem 0;
 

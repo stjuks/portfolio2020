@@ -3,7 +3,9 @@ import { FrameContainer } from './styles';
 import { GitHub, LinkedIn, Mail, File } from '../icons';
 import { scrollIntoView } from '../../util';
 import { links } from '../../util/data';
-import ViewContext from '../../util/ViewContext';
+import { ViewContext } from '../../util/ViewContext';
+import locales from '../../locale';
+import { LocaleContext } from '../../util/LocaleContext';
 
 const ContactIcon = ({ icon, href, label }) => (
   <a href={href} className="contact-link" target="_blank" tabIndex={1}>
@@ -13,20 +15,21 @@ const ContactIcon = ({ icon, href, label }) => (
   </a>
 );
 
-const icons = [
-  { icon: <File />, href: links.resume, label: 'Resume' },
-  { icon: <GitHub />, href: links.github, label: 'GitHub' },
-  { icon: <LinkedIn />, href: links.linkedin, label: 'LinkedIn' },
-  { icon: <Mail />, href: `mailto:${links.email}`, label: 'Email' }
-];
-
 function Frame() {
   const { activeView } = React.useContext(ViewContext);
+  const { locale, setLocale, translations } = React.useContext(LocaleContext);
 
   const handleLinkClick = (e) => {
     e.preventDefault();
     scrollIntoView(e.target.getAttribute('href'));
   };
+
+  const icons = [
+    { icon: <File />, href: links.resume, label: translations.contactFrame.resumeLabel },
+    { icon: <GitHub />, href: links.github, label: 'GitHub' },
+    { icon: <LinkedIn />, href: links.linkedin, label: 'LinkedIn' },
+    { icon: <Mail />, href: `mailto:${links.email}`, label: 'Email' }
+  ];
 
   return (
     <FrameContainer>
@@ -36,10 +39,10 @@ function Frame() {
         </a>
         <div className="links">
           <a href="#projects" data-active={activeView === 'projects'} className="link" onClick={handleLinkClick}>
-            Work
+            {translations.navbar.work}
           </a>
           <a href="#contact" data-active={activeView === 'contact'} className="link" onClick={handleLinkClick}>
-            Contact
+            {translations.navbar.contact}
           </a>
         </div>
       </div>
@@ -48,6 +51,13 @@ function Frame() {
           <ContactIcon key={item.href} {...item} />
         ))}
       </div>
+      {Object.keys(locales)
+        .filter((l) => l !== locale)
+        .map((l) => (
+          <button key={l} className="language-btn" onClick={() => setLocale(l)}>
+            {l}
+          </button>
+        ))}
     </FrameContainer>
   );
 }

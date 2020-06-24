@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { EmailFormContainer } from './styles';
 import { Loader } from '../icons';
 import { buildAPIURL } from '../../util';
+import { LocaleContext } from '../../util/LocaleContext';
 
 const DEFAULT_VALUES = {
   name: '',
@@ -17,6 +18,8 @@ function EmailForm() {
 
   const [formMessage, setFormMessage] = useState('');
   const [isLoading, setLoading] = useState(false);
+
+  const { translations } = useContext(LocaleContext);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -41,10 +44,10 @@ function EmailForm() {
         throw new Error();
       }
 
-      setFormMessage("Message successfully sent. I'll get back to you ASAP. :)");
+      setFormMessage(translations.emailForm.successMsg);
       setValues(DEFAULT_VALUES);
     } catch (err) {
-      setFormMessage('Error sending message.');
+      setFormMessage(translations.emailForm.errorMsg);
     } finally {
       setLoading(false);
     }
@@ -52,10 +55,10 @@ function EmailForm() {
 
   return (
     <EmailFormContainer>
-      <p>Or shoot me a message right here:</p>
+      <p>{translations.emailForm.title}</p>
       <form onSubmit={handleSubmit}>
         <label className="input-container">
-          <div className="label">Your name</div>
+          <div className="label">{translations.emailForm.nameLabel}</div>
           <input
             type="text"
             name="name"
@@ -67,7 +70,7 @@ function EmailForm() {
           />
         </label>
         <label className="input-container">
-          <div className="label">Your email</div>
+          <div className="label">{translations.emailForm.emailLabel}</div>
           <input
             type="email"
             name="email"
@@ -79,10 +82,10 @@ function EmailForm() {
           />
         </label>
         <label className="input-container">
-          <div className="label">Message</div>
+          <div className="label">{translations.emailForm.messageLabel}</div>
           <textarea
             name="message"
-            placeholder="Hey Steven! I have a great offer for you..."
+            placeholder={translations.emailForm.messagePlaceholder}
             value={values.message}
             onChange={handleChange}
             required
@@ -90,7 +93,7 @@ function EmailForm() {
         </label>
         <button type="submit" disabled={isLoading} className="submit-btn">
           <motion.div className="btn-text" animate={{ scale: isLoading ? 0.5 : 1, opacity: isLoading ? 0 : 1 }}>
-            Send
+            {translations.emailForm.submitBtn}
           </motion.div>
           {isLoading && (
             <motion.div className="loader">

@@ -11,12 +11,21 @@ export const FrameContainer = styled.div`
 
   .logo,
   .links,
-  .contact-links {
+  .contact-links,
+  .language-btn {
     pointer-events: auto;
   }
 
-  .navbar {
+  .navbar,
+  .language-btn {
     padding: 1.5rem;
+
+    ${media.s`
+      padding: 1rem;
+    `}
+  }
+
+  .navbar {
     box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
@@ -24,10 +33,6 @@ export const FrameContainer = styled.div`
     background: linear-gradient(to bottom, ${theme.colors.black.opacity(0.5)}, transparent);
     color: ${theme.colors.white};
     font-family: ${theme.fonts.serif};
-
-    ${media.s`
-      padding: 1rem;
-    `}
   }
 
   .logo {
@@ -41,6 +46,7 @@ export const FrameContainer = styled.div`
   .links {
     margin-left: auto;
     display: flex;
+    align-items: center;
 
     .link {
       position: relative;
@@ -64,7 +70,7 @@ export const FrameContainer = styled.div`
         :before {
           transform: scaleX(1);
           background: ${theme.colors.white};
-        } 
+        }
       }
     }
 
@@ -102,15 +108,14 @@ export const FrameContainer = styled.div`
     `}
 
     .contact-link {
-      padding: 1.5rem;
+      padding: 2rem;
       position: relative;
-      margin-bottom: 0.5rem;
 
       :hover,
       :focus {
         .icon-container {
-          transform: translate(calc(-100% - 1.5rem), -50%);
-          
+          transform: translate(calc(-100% - 2rem), -50%);
+
           :after {
             opacity: 1;
             color: ${theme.colors.white};
@@ -124,66 +129,30 @@ export const FrameContainer = styled.div`
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
-        transition: all .2s;
+        transition: all 0.2s;
 
         ${mixins.flexCenter}
 
         :after {
           content: attr(data-label);
-          transition: all .2s;
+          transition: all 0.2s;
           opacity: 0;
           font-size: 0.75rem;
           pointer-events: none;
           position: absolute;
-          left: 2rem;
+          left: 2.5rem;
         }
       }
     }
+  }
 
-    /* .contact-link {
-      transition: all 0.2s;
-      outline: none;
-      position: relative;
-
-      :hover,
-      :focus {
-        color: ${theme.colors.white};
-
-        .icon-container {
-          transform: translateX(-2rem);
-          
-          svg {
-            opacity: 0;
-          }
-
-          :before {
-            opacity: 1;
-            pointer-events: auto;
-          }
-        }
-      }
-
-      :not(:last-child) {
-        margin-bottom: 2.5rem;
-      }
-
-      .icon-container {
-        transition: all .2s;
-
-        :before {
-          position: absolute;
-          left: 2rem;
-          transform: translateY(-50%);
-          top: 45%;
-          pointer-events: none;
-          opacity: 0;
-          content: attr(data-label);
-          transition: all .2s;
-          font-family: ${theme.fonts.sansSerif};
-          font-weight: 500;
-          font-size: 0.75rem;
-        }
-      }
-    } */
+  .language-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: ${theme.fonts.sansSerif};
+    font-weight: 500;
+    text-transform: uppercase;
+    color: ${theme.colors.orange};
   }
 `;

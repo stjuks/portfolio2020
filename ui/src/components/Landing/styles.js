@@ -36,7 +36,8 @@ export const LandingContainer = styled(Section)`
       }
 
       :before {
-        content: 'FRONT-END DEVELOPER';
+        content: attr(data-subheading);
+        text-transform: uppercase;
         width: 10em;
         line-height: 1.25em;
         position: absolute;
@@ -95,7 +96,7 @@ export const LandingContainer = styled(Section)`
     }
 
     :after {
-      content: 'Work';
+      content: attr(data-text);
       color: ${theme.colors.white.opacity(0.8)};
       font-family: ${theme.fonts.serif};
       font-size: 0.875rem;

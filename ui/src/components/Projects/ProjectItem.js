@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { ProjectItemContainer } from './styles';
 import TextLink from '../../styles/TextLink';
 import { FocusWithin } from 'react-focus-within';
@@ -6,6 +6,7 @@ import { FocusWithin } from 'react-focus-within';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Play } from '../icons';
 import { useInView } from 'react-intersection-observer';
+import { LocaleContext } from '../../util/LocaleContext';
 
 function DetailRow({ children, index }) {
   return (
@@ -23,8 +24,10 @@ function DetailRow({ children, index }) {
 }
 
 function DetailRows({ project }) {
+  const { getLocaleValue, translations } = useContext(LocaleContext);
+
   const rows = [
-    <div className="duration">{project.duration}</div>,
+    <div className="duration">{getLocaleValue(project.duration)}</div>,
     <div className="tech-list">
       {project.tech.map((tech) => (
         <div key={tech} className="tech-item">
@@ -32,12 +35,12 @@ function DetailRows({ project }) {
         </div>
       ))}
     </div>,
-    <div className="description">{project.description}</div>,
+    <div className="description">{getLocaleValue(project.description)}</div>,
     <div style={{ display: 'flex' }}>
-      <TextLink href={project.github}>View code</TextLink>
+      <TextLink href={project.github}>{translations.projects.viewCode}</TextLink>
       {project.live && (
         <TextLink href={project.live} style={{ marginLeft: '0.75rem' }}>
-          View live
+          {translations.projects.viewDemo}
         </TextLink>
       )}
     </div>
@@ -51,14 +54,12 @@ function DetailRows({ project }) {
 }
 
 function ProjectItem({ project }) {
-  const [debug, setDebug] = useState('');
   const [isHovering, setHovering] = useState(false);
   const [isTouched, setTouched] = useState(false);
+
   const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '-15% 0px' });
 
-  const addDebug = (msg) => {
-    setDebug(debug + msg);
-  };
+  const { getLocaleValue } = useContext(LocaleContext);
 
   return (
     <ProjectItemContainer ref={ref}>
@@ -108,7 +109,7 @@ function ProjectItem({ project }) {
               <div className="preview-image__container">
                 <motion.img
                   src={project.previewImage}
-                  alt={project.name}
+                  alt={getLocaleValue(project.name)}
                   className="preview-image"
                   animate={{
                     scale: isOpened ? 1.05 : 1,
@@ -133,7 +134,7 @@ function ProjectItem({ project }) {
                   }}
                   transition={{ duration: 0.2 }}
                 >
-                  {project.name}
+                  {getLocaleValue(project.name)}
                 </motion.div>
                 <AnimatePresence>{isOpened && <DetailRows project={project} />}</AnimatePresence>
               </div>
