@@ -108,7 +108,7 @@ function ProjectItem({ project }) {
             >
               <div className="preview-image__container">
                 <motion.img
-                  src={project.previewImage}
+                  src={inView ? project.previewImage : null}
                   alt={getLocaleValue(project.name)}
                   className="preview-image"
                   animate={{

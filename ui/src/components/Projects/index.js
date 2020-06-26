@@ -9,8 +9,8 @@ function Projects() {
   return (
     <ProjectsContainer>
       <Section className="projects__wrapper" name="projects">
-        {projects.map((project) => (
-          <ProjectItem key={project.name} project={project} />
+        {projects.map((project, i) => (
+          <ProjectItem key={i} project={project} />
         ))}
       </Section>
     </ProjectsContainer>

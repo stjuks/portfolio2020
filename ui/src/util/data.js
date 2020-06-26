@@ -26,7 +26,7 @@ export const projects = [
     description: {
       ee: 'Lihtne kassapõhisel raamatupidamisel põhinev veebirakendus laoseisu haldamiseks Eesti FIEdele.',
       en:
-        'An inventory management web app developed which is meant to give a simple, bare-bones approach for inventory management to Estonian sole proprietors.'
+        'An inventory management web app which is meant to give a simple, bare-bones approach for inventory management to Estonian sole proprietors.'
     }
   },
   {
