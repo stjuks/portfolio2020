@@ -162,6 +162,34 @@ export const ProjectItemContainer = styled.div`
         font-size: 1.25rem;
         transform-origin: left;
       }
+
+      .view-btn {
+        position: absolute;
+        left: -2.5rem;
+        top: 1rem;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        visibility: hidden;
+
+        .text {
+          font-family: ${theme.fonts.serif};
+          color: ${theme.colors.white.opacity(0.25)};
+          margin-left: 0.5rem;
+        }
+
+        svg {
+          margin-left: 0.5rem;
+          color: ${theme.colors.orange};
+          z-index: 0;
+        }
+
+        ${media.s`
+          visibility: visible;
+        `}
+      }
     }
   }
 `;

@@ -4,7 +4,7 @@ import TextLink from '../../styles/TextLink';
 import { FocusWithin } from 'react-focus-within';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Play } from '../icons';
+import { Code, Play, LongArrowRight } from '../icons';
 import { useInView } from 'react-intersection-observer';
 import { LocaleContext } from '../../util/LocaleContext';
 
@@ -136,6 +136,12 @@ function ProjectItem({ project }) {
                 >
                   {getLocaleValue(project.name)}
                 </motion.div>
+                <motion.button
+                  className="view-btn"
+                  animate={{ x: isOpened ? '-1.25rem' : 0, opacity: isOpened ? 1 : 0.75 }}
+                >
+                  <LongArrowRight />
+                </motion.button>
                 <AnimatePresence>{isOpened && <DetailRows project={project} />}</AnimatePresence>
               </div>
             </motion.div>
