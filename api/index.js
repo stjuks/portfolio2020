@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 app.use(express.static(FRONTEND_FOLDER));
 
 app.post('/api/sendEmail', (req, res) => {
-  console.log(req.body);
   const { email, name, message } = req.body;
 
   const subject = `Portfolio message from ${name}`;
@@ -48,6 +47,7 @@ app.post('/api/sendEmail', (req, res) => {
 });
 
 app.get('/*', (req, res) => {
+  res.setHeader('Cache-Control', 'max-age=31536000');
   res.sendFile(path.join(__dirname, FRONTEND_INDEX));
 });
 

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import theme from './theme';
 
-export default styled.a.attrs({ className: 'text-link', target: '_blank' })`
+export default styled.a.attrs({
+  className: 'text-link',
+  target: '_blank',
+  rel: 'noreferrer'
+})`
   font-family: ${theme.fonts.serif};
   font-style: italic;
   position: relative;

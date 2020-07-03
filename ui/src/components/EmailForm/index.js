@@ -91,7 +91,7 @@ function EmailForm() {
             required
           />
         </label>
-        <button type="submit" disabled={isLoading} className="submit-btn">
+        <button type="submit" disabled={isLoading} className="submit-btn" aria-label="send message">
           <motion.div className="btn-text" animate={{ scale: isLoading ? 0.5 : 1, opacity: isLoading ? 0 : 1 }}>
             {translations.emailForm.submitBtn}
           </motion.div>

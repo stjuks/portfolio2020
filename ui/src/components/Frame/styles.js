@@ -57,7 +57,7 @@ export const FrameContainer = styled.div`
         content: '';
         position: absolute;
         left: 0;
-        top: 50%;
+        top: 100%;
         height: 2px;
         width: 100%;
         transform-origin: left;

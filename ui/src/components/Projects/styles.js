@@ -163,7 +163,7 @@ export const ProjectItemContainer = styled.div`
         transform-origin: left;
       }
 
-      .view-btn {
+      .view-arrow {
         position: absolute;
         left: -2.5rem;
         top: 1rem;

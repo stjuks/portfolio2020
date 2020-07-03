@@ -37,9 +37,15 @@ function DetailRows({ project }) {
     </div>,
     <div className="description">{getLocaleValue(project.description)}</div>,
     <div style={{ display: 'flex' }}>
-      <TextLink href={project.github}>{translations.projects.viewCode}</TextLink>
+      <TextLink href={project.github} name="github">
+        {translations.projects.viewCode}
+      </TextLink>
       {project.live && (
-        <TextLink href={project.live} style={{ marginLeft: '0.75rem' }}>
+        <TextLink
+          href={project.live}
+          name="demo"
+          style={{ marginLeft: '0.75rem' }}
+        >
           {translations.projects.viewDemo}
         </TextLink>
       )}
@@ -57,7 +63,10 @@ function ProjectItem({ project }) {
   const [isHovering, setHovering] = useState(false);
   const [isTouched, setTouched] = useState(false);
 
-  const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '-15% 0px' });
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-15% 0px'
+  });
 
   const { getLocaleValue } = useContext(LocaleContext);
 
@@ -117,7 +126,10 @@ function ProjectItem({ project }) {
                   }}
                 />
               </div>
-              <motion.div className="hover-overlay" animate={{ opacity: isOpened ? 1 : 0 }} />
+              <motion.div
+                className="hover-overlay"
+                animate={{ opacity: isOpened ? 1 : 0 }}
+              />
               <div
                 className="project-details"
                 style={{
@@ -136,13 +148,18 @@ function ProjectItem({ project }) {
                 >
                   {getLocaleValue(project.name)}
                 </motion.div>
-                <motion.button
-                  className="view-btn"
-                  animate={{ x: isOpened ? '-1.25rem' : 0, opacity: isOpened ? 1 : 0.75 }}
+                <motion.div
+                  className="view-arrow"
+                  animate={{
+                    x: isOpened ? '-1.25rem' : 0,
+                    opacity: isOpened ? 1 : 0.75
+                  }}
                 >
                   <LongArrowRight />
-                </motion.button>
-                <AnimatePresence>{isOpened && <DetailRows project={project} />}</AnimatePresence>
+                </motion.div>
+                <AnimatePresence>
+                  {isOpened && <DetailRows project={project} />}
+                </AnimatePresence>
               </div>
             </motion.div>
           );

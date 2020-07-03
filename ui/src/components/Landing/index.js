@@ -36,6 +36,7 @@ function Landing() {
           <motion.button
             onClick={handleNextPageClick}
             data-text={translations.landing.nextPage}
+            aria-label="next page"
             className="next-page-btn"
             initial={{ opacity: 0, x: '-50%' }}
             animate={{

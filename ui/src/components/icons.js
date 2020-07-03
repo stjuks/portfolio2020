@@ -70,11 +70,9 @@ export const LongArrowDown = () => (
     stroke="currentColor"
     strokeWidth="0"
   >
-    <g id="arrow-down" transform="translate(-992.1 -960)">
-      <line id="Line_58" data-name="Line 58" y1="40" transform="translate(997.5 960)" strokeWidth="1" />
+    <g transform="translate(-992.1 -960)">
+      <line y1="40" transform="translate(997.5 960)" strokeWidth="1" />
       <path
-        id="Path_21"
-        data-name="Path 21"
         d="M1.336-.85,6.967,6.127-2.164,5.15l3.634-2.2Z"
         transform="translate(999.349 994.469) rotate(60)"
       />
@@ -101,17 +99,15 @@ export const Code = () => (
 
 export const LongArrowRight = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="50.5" height="6" viewBox="0 0 50.5 6">
-    <g id="Group_5" data-name="Group 5" transform="translate(-543 -738.958)">
+    <g transform="translate(-543 -738.958)">
       <line
-        id="Line_56"
-        data-name="Line 56"
         x2="47"
         transform="translate(543 742)"
         fill="none"
         stroke="currentColor"
         strokeWidth="1"
       />
-      <g id="Path_14" data-name="Path 14" transform="translate(593.5 739) rotate(90)" fill="currentColor">
+      <g transform="translate(593.5 739) rotate(90)" fill="currentColor">
         <path
           d="M 1.270936608314514 6.085025310516357 L 2.993391513824463 1.452473998069763 L 4.653284549713135 6.04427433013916 L 3.366233348846436 4.659594535827637 L 3.005123376846313 4.271104335784912 L 2.638593435287476 4.654484272003174 L 1.270936608314514 6.085025310516357 Z"
           stroke="none"

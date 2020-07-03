@@ -14,7 +14,7 @@ export const LandingContainer = styled(Section)`
     color: ${theme.colors.white.opacity(0.8)};
     text-align: right;
     line-height: 0.8em;
-    font-weight: 800;
+    font-weight: 900;
     font-family: ${theme.fonts.sansSerif};
     font-size: 20vw;
 

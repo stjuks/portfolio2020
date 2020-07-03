@@ -14,11 +14,11 @@ function Contact() {
     <ContactContainer>
       <Section className="contact-section" name="contact">
         <h3>{translations.contact.title}</h3>
-        <TextLink href={`mailto:${links.email}`}>{translations.contact.email}</TextLink>
-        <TextLink href={links.linkedin}>LinkedIn</TextLink>
-        <TextLink href={links.github}>GitHub</TextLink>
-        <TextLink href={links.fbMsg}>FB Messenger</TextLink>
-        <TextLink href={links.resume} className="resume-link">
+        <TextLink href={`mailto:${links.email}`} name="email">{translations.contact.email}</TextLink>
+        <TextLink href={links.linkedin} name="linkedin">LinkedIn</TextLink>
+        <TextLink href={links.github} name="github">GitHub</TextLink>
+        <TextLink href={links.fbMsg} name="fbMessenger">FB Messenger</TextLink>
+        <TextLink href={links.resume} className="resume-link" name="resume">
           <LongArrowRight />
           {translations.contact.resume}
         </TextLink>
