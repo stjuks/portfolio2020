@@ -8,7 +8,14 @@ import locales from '../../locale';
 import { LocaleContext } from '../../util/LocaleContext';
 
 const ContactIcon = ({ icon, href, label }) => (
-  <a href={href} className="contact-link" target="_blank" tabIndex={1} name="label" rel="noreferrer">
+  <a
+    href={href}
+    className="contact-link"
+    target="_blank"
+    tabIndex={1}
+    name="label"
+    rel="noreferrer"
+  >
     <span className="icon-container" data-label={label}>
       {icon}
     </span>
@@ -17,7 +24,9 @@ const ContactIcon = ({ icon, href, label }) => (
 
 function Frame() {
   const { activeView } = React.useContext(ViewContext);
-  const { locale, setLocale, translations } = React.useContext(LocaleContext);
+  const { locale, setLocale, translations, getLocaleValue } = React.useContext(
+    LocaleContext
+  );
 
   const handleLinkClick = (e) => {
     e.preventDefault();
@@ -27,7 +36,7 @@ function Frame() {
   const icons = [
     {
       icon: <File />,
-      href: links.resume,
+      href: getLocaleValue(links.resume),
       label: translations.contactFrame.resumeLabel
     },
     { icon: <GitHub />, href: links.github, label: 'GitHub' },

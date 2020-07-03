@@ -2,7 +2,8 @@ import warehopv1Preview from '../assets/images/warehop-1-sample.jpg';
 import warehopv2Preview from '../assets/images/warehop-2-sample.jpg';
 import portfolioPreview from '../assets/images/portfolio-sample.jpg';
 import commdiaryPreview from '../assets/images/commdiary-sample.jpg';
-import resumeEn from '../assets/files/cv_en.pdf';
+import resumeEN from '../assets/files/CV_STEVENJUKS_EN.pdf';
+import resumeEE from '../assets/files/CV_STEVENJUKS_EE.pdf';
 
 export const projects = [
   {
@@ -24,7 +25,8 @@ export const projects = [
     ],
     previewImage: warehopv1Preview,
     description: {
-      ee: 'Lihtne kassapõhisel raamatupidamisel põhinev veebirakendus laoseisu haldamiseks Eesti FIEdele.',
+      ee:
+        'Lihtne kassapõhisel raamatupidamisel põhinev veebirakendus laoseisu haldamiseks Eesti FIEdele.',
       en:
         'An inventory management web app which is meant to give a simple, bare-bones approach for inventory management to Estonian sole proprietors.'
     }
@@ -49,8 +51,10 @@ export const projects = [
     ],
     previewImage: warehopv2Preview,
     description: {
-      en: 'A new and improved iteration of Warehop 1.0 with responsive design and refactored codebase. (Currently WIP)',
-      ee: 'Uus ja täiustatud versioon Warehop 1.0-st kohalduva disaini ning refaktoreeritud koodibaasiga. (Hetkel töös)'
+      en:
+        'A new and improved iteration of Warehop 1.0 with responsive design and refactored codebase. (Currently WIP)',
+      ee:
+        'Uus ja täiustatud versioon Warehop 1.0-st kohalduva disaini ning refaktoreeritud koodibaasiga. (Hetkel töös)'
     }
   },
   {
@@ -61,8 +65,10 @@ export const projects = [
     tech: ['React', 'Styled Components', 'TypeScript', 'LocalStorage'],
     previewImage: commdiaryPreview,
     description: {
-      en: 'A local web app I developed during my conscription to simplify logging military radio communication.',
-      ee: 'Lokaalne veebirakendus, mille arendasin ajateenistuse ajal militaarraadioside logimise kiirendamiseks.'
+      en:
+        'A local web app I developed during my conscription to simplify logging military radio communication.',
+      ee:
+        'Lokaalne veebirakendus, mille arendasin ajateenistuse ajal militaarraadioside logimise kiirendamiseks.'
     }
   },
   {
@@ -72,8 +78,10 @@ export const projects = [
     tech: ['React', 'Styled Components', 'Framer Motion', 'Adobe XD'],
     previewImage: portfolioPreview,
     description: {
-      en: "The page you're currently looking at. A portfolio site to give a quick introduction of myself.",
-      ee: 'Leht, mida hetkel vaatate - portfoolio sait minu üldiseks tutvustuseks.'
+      en:
+        "The page you're currently looking at. A portfolio site to give a quick introduction of myself.",
+      ee:
+        'Leht, mida hetkel vaatate - portfoolio sait minu üldiseks tutvustuseks.'
     }
   }
 ];
@@ -83,5 +91,8 @@ export const links = {
   email: 'stevenjuks@hotmail.com',
   linkedin: 'https://www.linkedin.com/in/stevenjuks',
   github: 'https://github.com/stjuks',
-  resume: resumeEn
+  resume: {
+    ee: resumeEE,
+    en: resumeEN
+  }
 };
